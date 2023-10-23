@@ -1,28 +1,28 @@
 const form = document.querySelector("form")
-const resp = document.querySelector("h3")
+const form = document.querySelector("#outResp")
+const form = document.querySelector("#outResp1")
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const LadoA = number(form.inLadoA.value);
-    const LadoB = number(form.inLadoB.value);
-    const LadoC = number(form.inLadoC.value);
+    const ladoA = Number(form.inladoA.value);
+    const ladoB = Number(form.inladoB.value);
+    const ladoC = Number(form.inladoC.value);
 
-    if((LadoA > LadoB + LadoC) || (LadoB > LadoA + LadoC) || (LadoC > LadoA + LadoB)){
+    if((ladoA > ladoB + ladoC) || (ladoB > ladoA + ladoC) || (ladoC > ladoA + ladoB)){
       alert("Essas medidas não podem formar um triângulo. Um dos lados não pode ser maior que a soma dos outros dois")
-      form.inLadoA.focus()
-      form.inLadoB.focus()
-      form.inLadoC.focus()
+      form.inladoA.focus()
+      form.inladoB.focus()
+      form.inladoC.focus()
       return
     }
 
     resp.innerText = 'Lados podem formar um triângulo'
 
-    if(LadoA == LadoB && LadoA == LadoC){
+    if(ladoA == ladoB && ladoA == ladoC){
         resp.innerText = 'Tipo: Equilátero'
-    } else if((LadoA == LadoB) || (LadoA == LadoC) || (LadoB == LadoC)){
+    }else if((ladoA == ladoB) || (ladoA == ladoC) || (ladoB == ladoC)){
         resp.innerText = 'Tipo: Isóceles'
-    } else{
+    }else{
         rep1.innerText = 'Tipo: Escaleno'
     }
-
 })
